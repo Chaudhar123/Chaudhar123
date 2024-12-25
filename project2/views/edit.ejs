@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT PAGE</title>
+</head>
+<body>
+    <style>
+        h2{
+            background-color: lightblue;
+        }
+        button{
+            background-color: lightyellow;
+        }
+    </style>
+    <h2>EDIT DATA</h2>
+    <h3>ID :<%=data.id%></h3>
+    <form method="post" action="/user/<%=data.id%>?_method=PATCH">
+        <textarea name="username"><%=data.username%></textarea>
+        <br>
+        <input type="password" name="password" placeholder="Enter password">
+        <br>
+        <br>
+        <button>submit</button>
+    </form>
+</body>
+</html>

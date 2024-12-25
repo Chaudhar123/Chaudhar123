@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USER-PAGE</title>
+</head>
+<body>
+    <style>
+        h2{
+            font-style: italic;
+            background-color: lightblue;
+        }
+        tr,th,td{
+            border: 1px solid black;
+            background-color: lightgrey;
+        }
+        button{
+            background-color:lightslategray;
+        }
+    </style>
+    <h2>USER DATA</h2>
+
+    
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>username</th>
+            <th>email</th>
+        </tr>
+        
+           
+           
+        
+        
+            <%for(result of results){%>
+                <tr>
+                    <td><%=result.id%></td>
+                    <td><%=result.username%></td>
+                    <td><%=result.email%></td>
+
+                    <td>
+                        <form method="get" action="/user/<%=result.id%>/edit">
+                            <button>EDIT</button>
+                        </form>
+                    </td>
+
+                    <td>
+                        <form method="post" action="/user/<%=result.id%>?_method=DELETE">
+                            <button>Delete</button>
+                        </form>
+                    </td>
+                       
+
+                    
+                   
+                </tr>
+         
+            <%}%>
+        
+            <th>
+                <tr>
+                    <form method="get" action="/user/data">
+                        <button>Total number of user</button>
+                </tr>
+             
+                    
+                </form>
+            </th>
+            <th>
+                <tr>
+                    <form method="get" action="/user/new">
+                        <button>create new user</button>
+                </tr>
+             
+                    
+                </form>
+            </th>
+
+
+           
+            
+               
+            
+    
+    </table>
+  
+</body>
+</html>
